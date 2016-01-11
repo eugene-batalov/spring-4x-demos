@@ -1,6 +1,7 @@
 .metadata
 .recommenders
 RemoteSystemsTempFiles
+rest-test
 */.classpath
 */.project
 */.settings
