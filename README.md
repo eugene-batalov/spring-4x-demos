@@ -2,7 +2,7 @@
 
 A bunch of [Spring Framework 4.x][spring] using demo projects.
 
- * `rest-web-service` - the example of a simple RESTful web-service based on the [Spring Web MVC framework][spring-mvc].
+ * `rest-web-service` - the example of a simple RESTful web-service based on the [Spring Web MVC][spring-mvc] framework.
 
 [spring-mvc]: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc
 [spring]: https://projects.spring.io/spring-framework/
