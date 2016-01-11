@@ -1,6 +1,6 @@
 ## A siple RESTFul Web Service based on the [Spring Web MVC](docs.spring.io/spring/docs/3.1.x/spring-framework-reference/html/mvc.html) framework
 
-A simple application just contains [a controller](src/main/java/psamolysov/demo/spring/restws/controller/MessageController.java) provides three methods:
+A simple application just contains [a controller](src/main/java/psamolysov/demo/spring/restws/controller/MessageController.java) which provides three methods:
 
  * `textMessage()` - returns a simple text message getted from a service-class.
  * `jsonMessage()` - returns a JSON message that is the result of simple POJO's [content conversion][message-conversion].
@@ -9,11 +9,11 @@ A simple application just contains [a controller](src/main/java/psamolysov/demo/
 
 The methods are mapped on a common path: `/api/message`. The `Accept` HTTP header is important for method dispatch.
 
-[message-convertsion](docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion)
+[message-conversion](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion)
 
 ### How to build
 
-Please, use [Apache Maven](https://maven.apache.org/) to build the projects.
+Please, use [Apache Maven](https://maven.apache.org/) to build the project.
 
 ```
 # git clone https://github.com/samolisov/spring-4x-demos.git
@@ -23,16 +23,14 @@ Please, use [Apache Maven](https://maven.apache.org/) to build the projects.
 
 ### How to run
 
-You can just deploy the projects in your favourite application server or servlet container, e.g. *Apache Tomcat* or *WebSphere Application Server 
-Liberty Profile*
+You can just deploy the projects in your favourite application server or servlet container, e.g. *Apache Tomcat*, *Jetty* or *WebSphere Application Server 
+Liberty*
 
 ### How to get a result
 
 You can call a controller just using the following code snippet:
 
 ```java
-package psamolysov.demo.spring.restws.client;
-
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
