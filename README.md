@@ -20,4 +20,4 @@ Please, use [Apache Maven](https://maven.apache.org/) to build the projects.
 ### How to run
 
 You can just deploy the projects in your favourite application server or servlet container, e.g. *Apache Tomcat*, *Jetty* or *WebSphere Application Server 
-Liberty*
+Liberty*.
