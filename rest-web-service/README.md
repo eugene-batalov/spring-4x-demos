@@ -1,4 +1,4 @@
-## A siple RESTFul Web Service based on the [Spring Web MVC](docs.spring.io/spring/docs/3.1.x/spring-framework-reference/html/mvc.html) framework
+## A siple RESTFul Web Service based on the Spring Web MVC framework
 
 A simple application just contains [a controller](src/main/java/psamolysov/demo/spring/restws/controller/MessageController.java) which provides three methods:
 
@@ -9,7 +9,7 @@ A simple application just contains [a controller](src/main/java/psamolysov/demo/
 
 The methods are mapped on a common path: `/api/message`. The `Accept` HTTP header is important for method dispatch.
 
-[message-conversion](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion)
+[message-conversion]: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion
 
 ### How to build
 
