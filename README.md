@@ -12,9 +12,9 @@ A bunch of [Spring Framework 4.x][spring] using demo projects.
 Please, use [Apache Maven](https://maven.apache.org/) to build the projects.
 
 ```bash
-# git clone https://github.com/samolisov/spring-4x-demos.git
-# cd spring-4x-demos
-# mvn clean package
+$ git clone https://github.com/samolisov/spring-4x-demos.git
+$ cd spring-4x-demos
+$ mvn clean package
 ```
 
 ### How to run
@@ -25,7 +25,7 @@ the Liberty server.
 
 [Liberty Maven Plug-in]: https://github.com/WASdev/ci.maven
 
-# License
+### License
 
 ```text
 Licensed under the Apache License, Version 2.0 (the "License");
