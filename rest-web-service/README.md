@@ -1,4 +1,4 @@
-## A simple RESTful Web Service based on the Spring Web MVC framework
+## A simple RESTful Web Service based on Spring Web MVC
 
 A simple application just contains [a controller](src/main/java/psamolysov/demo/spring/restws/controller/MessageController.java) which provides three methods:
 
