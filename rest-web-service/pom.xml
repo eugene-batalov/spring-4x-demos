@@ -20,7 +20,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compile.source>1.7</maven.compile.source>
     <maven.compile.target>1.7</maven.compile.target>
-    <spring.version>4.2.3.RELEASE</spring.version>
     <jackson.version>2.6.3</jackson.version>
   </properties>
 
@@ -28,22 +27,18 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -76,15 +71,28 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version>
+        <groupId>net.wasdev.wlp.maven.plugins</groupId>
+        <artifactId>liberty-maven-plugin</artifactId>
         <configuration>
-            <encoding>${project.build.sourceEncoding}</encoding>
-            <failOnMissingWebXml>false</failOnMissingWebXml>
-            <outputFileNameMapping>@{groupId}@-@{artifactId}@-@{baseVersion}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>            
+          <configFile>src/main/wlp/server.xml</configFile>
+          <clean>true</clean>
+          <bootstrapProperties>
+            <application.location>../../../../../${project.build.finalName}</application.location>
+            <application.name>${project.artifactId}</application.name>
+            <default.http.port>9082</default.http.port>
+            <default.https.port>9544</default.https.port>
+          </bootstrapProperties>
+          <features>
+            <acceptLicense>true</acceptLicense>
+            <feature>servlet-3.1</feature>
+          </features>
+          <install>
+            <type>kernel</type>
+            <version>2015.11.0_0</version>
+          </install>
+          <serverName>springServer</serverName>
         </configuration>
-      </plugin>      
+      </plugin>
     </plugins>
   </build>
 </project>

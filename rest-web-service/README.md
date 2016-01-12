@@ -15,20 +15,45 @@ The methods are mapped on a common path: `/api/message`. The `Accept` HTTP heade
 
 Please, use [Apache Maven](https://maven.apache.org/) to build the project.
 
-```
-# git clone https://github.com/samolisov/spring-4x-demos.git
-# cd spring-4x-demos/rest-web-service
-# mvn clean package
+```bash
+$ git clone https://github.com/samolisov/spring-4x-demos.git
+$ cd spring-4x-demos/rest-web-service
+$ mvn clean package
 ```
 
 ### How to run
 
-You can just deploy the projects in your favourite application server or servlet container, e.g. *Apache Tomcat*, *Jetty* or *WebSphere Application Server 
-Liberty*.
+The project uses [Liberty Maven Plug-in][] to automatically download and install WebSphere Liberty profile runtime from the 
+[Liberty repository](https://developer.ibm.com/wasdev/downloads/). Liberty Maven Plug-in is also used to create, configure, and run the application on 
+the Liberty server.
+
+[Liberty Maven Plug-in]: https://github.com/WASdev/ci.maven
+
+Use the following simple three steps to run the application with Maven:
+
+1. Execute the Liberty Maven Plug-in to download, install and create Liberty profile server.
+    ```bash
+    $ mvn liberty:create-server
+    ```
+
+   The Liberty profile kernel archive contains about **11 MB**, i.e. *Apache Tomcat 8.0.30* is just only about 2 MB less.
+
+2. Install the **servlet-3.1** feature into the created server.
+   ```bash
+   $ mvn liberty:install-feature
+   ```
+
+3. To run the server with the example execute:
+    ```bash
+    $ mvn liberty:run-server
+    ```
+
+Once the server is running, the application will be available under 
+[http://localhost:9082/rest-web-service/api/message](http://localhost:9082/rest-web-service/api/message).
 
 ### How to get a result
 
-You can call a controller just using the following code snippet:
+You can call the controller just using the following code snippet:
 
 ```java
 import javax.ws.rs.client.ClientBuilder;
@@ -66,9 +91,9 @@ public class SimpleInvokator {
 
 *Jersey 2* should be [downloaded](https://jersey.java.net/download.html) for the invokator.
 
-A result example looks like the following:
+A result looks like the following:
 
-```
+```text
 Message#1452523665973
 {"orderName":"IBM zShop","orderCount":441}
 <zshop orderName="IBM zShop" orderCount="648" xmlns="http://ibm.com/ru/spring-integration/demo/workspace"></zshop>
