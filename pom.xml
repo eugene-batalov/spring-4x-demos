@@ -12,6 +12,7 @@
 
   <modules>
       <module>rest-web-service</module>
+      <module>jpa-integration</module>
   </modules>
 
   <properties>

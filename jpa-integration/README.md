@@ -1,0 +1,1 @@
+## Spring 4.x with JPA 2.x integration
