@@ -64,9 +64,28 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-eclipse-plugin</artifactId>
         <configuration>
-          <additionalProjectFacets>
-            <jpt.jpa>2.0</jpt.jpa>
-          </additionalProjectFacets>
+          <additionalBuildcommands>
+            <buildcommand>org.eclipse.wst.common.project.facet.core.builder</buildcommand>
+            <buildcommand>org.eclipse.wst.validation.validationbuilder</buildcommand>
+          </additionalBuildcommands>
+          <additionalProjectnatures>
+            <projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
+          </additionalProjectnatures>
+          <!-- the plugin without WTP does not generate the org.eclipse.wst.common.project.facet.core.xml file -->
+          <additionalConfig>
+            <file>
+              <name>.settings\org.eclipse.wst.common.project.facet.core.xml</name>
+              <content>
+              <![CDATA[
+              <?xml version="1.0" encoding="UTF-8"?>
+              <faceted-project>
+                <installed facet="java" version="1.7"/>
+                <installed facet="jpt.jpa" version="2.1"/>
+              </faceted-project>
+              ]]>                
+              </content>
+            </file>
+          </additionalConfig>
         </configuration>
       </plugin>
     </plugins>
