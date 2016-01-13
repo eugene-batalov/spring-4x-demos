@@ -41,6 +41,20 @@
       <artifactId>eclipselink</artifactId>
       <version>2.6.2</version>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.eclipse.persistence</groupId>
+          <artifactId>commonj.sdo</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>javax.validation</groupId>
+          <artifactId>validation-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.glassfish</groupId>
+          <artifactId>javax.json</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 
