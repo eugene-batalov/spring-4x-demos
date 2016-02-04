@@ -7,7 +7,7 @@
   <version>4.x-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring framework 4.x with jpa 2.x integration</name>
+  <name>spring framework 4.x and jpa 2.x integration</name>
   <url>http://maven.apache.org</url>
 
   <parent>
@@ -55,6 +55,11 @@
           <artifactId>javax.json</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
+      <version>10.12.1.1</version>
     </dependency>
   </dependencies>
 

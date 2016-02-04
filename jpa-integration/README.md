@@ -1,1 +1,1 @@
-## Spring 4.x with JPA 2.x integration
+## The Spring Framework 4.x and JPA 2.x integration
