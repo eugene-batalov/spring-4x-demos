@@ -2,7 +2,8 @@
 
 A bunch of [Spring Framework 4.x][spring] using demo projects.
 
- * `rest-web-service` - the example of a simple RESTful web-service based on the [Spring Web MVC][spring-mvc] framework.
+ * `rest-web-service` - an example of a simple RESTful web-service based on the [Spring Web MVC][spring-mvc] framework.
+ * `jpa-integration` - a demo application, which shows how to integrate the Spring Framework 4.x and JPA 2.x.
 
 [spring-mvc]: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc
 [spring]: https://projects.spring.io/spring-framework/
