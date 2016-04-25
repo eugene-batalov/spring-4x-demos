@@ -28,9 +28,8 @@ public class MyEntity implements Serializable {
 
 	MyEntity() {}
 	
-	public MyEntity(String id, String name) {
+	public MyEntity(String name) {
 		super();
-		this.id = id;
 		this.name = name;
 	}
 
@@ -48,5 +47,5 @@ public class MyEntity implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
 }

@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="jpa-integration">
+	<persistence-unit name="jpa-integration" transaction-type="RESOURCE_LOCAL">
+	   <!-- Example is gotten from 
+	        http://stackoverflow.com/questions/4115498/how-can-i-use-derby-in-memory-with-jpa2 -->
+	   <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>   
 	   <class>psamolysov.demo.spring.jpaintegration.entity.MyEntity</class>
+	   <exclude-unlisted-classes>true</exclude-unlisted-classes>
+	   <properties>
+	       <!-- Common properties -->
+	       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+           <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:test-jpa;create=true"/>
+           <property name="javax.persistence.jdbc.user" value="APP"/>
+           <property name="javax.persistence.jdbc.password" value="APP"/>
+           
+           <!-- EclipseLink specific properties -->
+           <property name="eclipselink.target-database" value="Derby"/>
+           <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+           <property name="eclipselink.debug" value="ALL"/>
+           <property name="eclipselink.weaving" value="static"/>
+           <property name="eclipselink.logging.level" value="WARNING"/>        
+	   </properties>
 	</persistence-unit>
 </persistence>

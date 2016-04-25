@@ -7,3 +7,4 @@ rest-test
 */.settings
 */target
 */bin
+*/*.log
